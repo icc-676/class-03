@@ -8,7 +8,7 @@ import com.abs.clase03.Student
 import com.abs.clase03.inflate
 import kotlinx.android.synthetic.main.recyclerview_item_row.view.*
 
-class RecyclerViewAdapter(private val students: ArrayList <Student>):
+class RecyclerViewAdapter(private val students: ArrayList<Student>) :
     RecyclerView.Adapter<RecyclerViewAdapter.StudentCard>() {
 
     override fun onBindViewHolder(holder: StudentCard, position: Int) {
@@ -18,12 +18,12 @@ class RecyclerViewAdapter(private val students: ArrayList <Student>):
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentCard {
         val inflatedView = parent.inflate(R.layout.recyclerview_item_row, false)
-        return  StudentCard(inflatedView)
+        return StudentCard(inflatedView)
     }
 
     override fun getItemCount(): Int = students.count()
 
-    class StudentCard(v: View) : RecyclerView.ViewHolder(v), View.OnClickListener{
+    class StudentCard(v: View) : RecyclerView.ViewHolder(v), View.OnClickListener {
         private var view: View = v
         private var student: Student? = null
 
